@@ -2,12 +2,12 @@
 <odoo><!-- Elementos del menu -->
 <!-- Library App Menu -->
 <menuitem id="menu_library"
-name="Library" />
+    name="Library" />
 <!-- Acción para abrir la lista de libros-->
 <act_window id="action_library_book"
-name="Library Books"
-res_model="library.book"
-view_mode="tree,form"/>
+    name="Library Books"
+    res_model="library.book"
+    view_mode="tree,form"/>
 <!-- Elemento de menú para abrir la lista de libros-->
 <menuitem id="menu_library_book"
     name="Books"            

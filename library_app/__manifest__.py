@@ -8,6 +8,7 @@
     'security/ir.model.access.csv', # se agregan los archivos xml
     'views/library_menu.xml',
     'views/book_view.xml',
+    'views/book_list_template.xml',
 ],
 'application': True, #valor boleano que define si instalara o no 
 } 

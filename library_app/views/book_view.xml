@@ -6,16 +6,16 @@
     <field name="arch" type="xml">
         <form string="Book">
             
-             <header>
+             <header> 
                 <button name="button_check_isbn" type="object"
                 string="Check ISBN" />
-            </header>  
+            </header>     <!-- orden de botones  -->
 
             
-             <sheet>
+             <sheet >  <!-- encierra todo en un cuadraro con sombra -->
                 <group name="group_top">
-                    <group name="group_left">
-                        <field name="name" />
+                    <group name="group_left"> <!-- organizar el formulariocontenido group -->
+                        <field name="name" /> 
                         <field name="author_ids" widget="many2many_tags" />
                         <field name="publisher_id" />
                         <field name="date_published" />
@@ -26,8 +26,23 @@
                     <field name="image" widget="image" />
                 </group>
                 </group>
-</sheet>
+             </sheet>
         </form>
+    </field>
+</record>
+<record id="view_search_book" model="ir.ui.view">
+    <field name="name">Book Filters</field>
+    <field name="model">library.book</field>
+    <field name="arch" type="xml">
+    <search>
+        <field name="publisher_id"/>
+        <filter name="filter_inactive"
+            string="Inactive"
+            domain="[('active','=',True)]"/>
+        <filter name="filter_active"
+            string="Active"
+            domain="[('active','=',False)]"/>
+    </search>
     </field>
 </record>
 </odoo>
