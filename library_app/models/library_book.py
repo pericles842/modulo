@@ -3,8 +3,8 @@ from odoo.exceptions import Warning #inportaciones de odoo del nucleo de odoo
 
 class Book(models.Model):
     _name = 'library.book' #identificador del modelo 
-    
-    _description = 'Book' # nombre para los registros del modelo 
+    _description = 'Book' # nombre para los registros del modelo
+
     name = fields.Char('Title', required=True)
     isbn = fields.Char('ISBN')
     active = fields.Boolean('Active?', default=True) #activar registros  y para saber si aun ahi libros
@@ -12,6 +12,7 @@ class Book(models.Model):
     image = fields.Binary('Cover')  # imagen de portada del libro 
     publisher_id = fields.Many2one('res.partner', string='Publisher') #direccion id 
     author_ids = fields.Many2many('res.partner', string='Authors') #lista de autores
+    target_field = fields.Char('Target Field')
     
     
     def button_check_isbn(self):
@@ -24,10 +25,10 @@ class Book(models.Model):
             check = 10 - remain if remain != 0 else 0
             return digits[-1] == check 
 
-def button_check_isbn(self):
-    for book in self:
-        if not book.isbn:
-            raise Warning('Please provide an ISBN for %s' % book.name)
-        if book.isbn and not book._check_isbn():
-                raise Warning('%s is an invalid ISBN' % book.isbn)
-    return True
+    def button_check_isbn(self):
+        for book in self:
+            if not book.isbn:
+                raise Warning('Please provide an ISBN for %s' % book.name)
+            if book.isbn and not book._check_isbn():
+                    raise Warning('%s is an invalid ISBN' % book.isbn)
+        return True

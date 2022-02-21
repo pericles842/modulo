@@ -19,6 +19,7 @@
                         <field name="author_ids" widget="many2many_tags" />
                         <field name="publisher_id" />
                         <field name="date_published" />
+                        <field name="target_field" />
                     </group>
                 <group name="group_right">
                     <field name="isbn" />
