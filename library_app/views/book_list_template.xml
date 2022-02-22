@@ -6,7 +6,7 @@
         <div id="wrap" class="container">
             <h1>Books</h1>
                 <t t-foreach="books" t-as="book">
-        <div class="row">
+        <div class="row">                           <!--  plantilla html -->
             <span t-field="book.name" />,
             <span t-field="book.date_published" />,
             <span t-field="book.publisher_id" />

@@ -9,6 +9,12 @@
     'views/library_menu.xml',
     'views/book_view.xml',
     'views/book_list_template.xml',
+
+],
+'demo':[
+    'data/res.partner.csv',
+    'data/library.book.csv',
+    'data/book_demo.xml',
 ],
 'application': True, #valor boleano que define si instalara o no 
 } 

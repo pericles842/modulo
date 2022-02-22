@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Modify Group name -->
+    <!-- Modificar nombre de grupo -->
     <record id="library_app.library_group_user" model="res.groups">
         <field name="name">Librarian</field>
     </record>
