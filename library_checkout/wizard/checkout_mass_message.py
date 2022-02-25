@@ -1,3 +1,4 @@
+from unicodedata import name
 from odoo import api, exceptions, fields, models
 
 import logging
@@ -8,6 +9,7 @@ class CheckoutMassMessage(models.TransientModel):
     _name = 'library.checkout.massmessage'
     _description = 'Send Message to Borrowers'
 
+    name = fields.Char()
     checkout_ids = fields.Many2many(
         'library.checkout',
         string='Checkouts')
@@ -21,9 +23,9 @@ class CheckoutMassMessage(models.TransientModel):
         defaults['checkout_ids'] = checkout_ids
         return defaults
 
-    @api.multi
+    
     def button_send(self):
-        import pudb; pu.db
+        #import pudb; pu.db
         self.ensure_one()
 
         if not self.checkout_ids:

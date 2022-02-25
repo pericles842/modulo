@@ -10,8 +10,8 @@
     <menuitem id="menu_library_checkout"
               name="Checkout"
               action="action_library_checkout"
-              parent="library_app.library_menu" />
-    />
+              parent="library_app.menu_library" />
+    
 
     <act_window id="action_library_stage"
       name="Checkout Stages"
@@ -22,7 +22,7 @@
     <menuitem id="menu_library_stage"
               name="Checkout Stages"
               action="action_library_stage"
-              parent="library_app.library_menu" />
-    />
+              parent="library_app.menu_library" />
+    
 
 </odoo>
