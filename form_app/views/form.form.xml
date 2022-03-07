@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_form_tree" model ="ir.ui.view"> 
+        <field name="name">tree</field>
+        <field name="model">form.form</field> 
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+  <record id="view_form_form" model ="ir.ui.view"> 
+        <field name="name">form</field>
+        <field name="model">form.form</field> 
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+            </form>
+        </field>
+    </record>
+
+    <act_window  
+        id="action_form"
+        name="form"
+        res_model = "form.form"  
+        view_mode="tree,form" /> 
+
+
+    <menuitem id="menu_form" name="Form" />
+    
+    <menuitem id="menu_form_form"
+        name="form" 
+        parent ="form_app.menu_form" 
+        action="action_form"/> 
+
+</odoo>
