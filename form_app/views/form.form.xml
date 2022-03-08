@@ -31,7 +31,7 @@
                             </div>
                             <field name="registration_date" invisible="1"/>
                             <field name="date_of_birth"/>
-                            <field name="algo" widget="Boolean"/> 
+                            <field name="algo" widget="radio"/> 
                             <field name="degree"/>
                             <field name="force"/>
                             </group>
@@ -56,7 +56,7 @@
     <menuitem id="menu_form" name="Form" />
     
     <menuitem id="menu_form_form"
-        name="form" 
+        name="Form" 
         parent ="form_app.menu_form" 
         action="action_form"/> 
 

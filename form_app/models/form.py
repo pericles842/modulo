@@ -1,5 +1,7 @@
 from dataclasses import field
 from datetime import  datetime, date
+from email.policy import default
+import string
 from odoo import api, fields, models 
 
 
@@ -16,7 +18,7 @@ class form(models.Model):
                              ('feminine','Feminine'),
                              ('other','Other')], string='Sexo')
     algo = fields.Selection([('civil','Civil'),
-                              ('militar','Militar')], 'Civil/Militar')
+                              ('militar','Militar')], default='civil', string='Civil/Militar')
     degree = fields.Char(string='Degree') #grado
     force = fields.Char(string='Force') #fuerza
     date_of_birth = fields.Date(string='Date Of Birth',required=True) #Fecha de nacimiento
