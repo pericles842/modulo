@@ -7,6 +7,10 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="last_name"/>
+                <field name="sexo"/>
+                <field name="age"/>
+                <field name="registration_date"/>
             </tree>
         </field>
     </record>
@@ -16,7 +20,28 @@
         <field name="model">form.form</field> 
         <field name="arch" type="xml">
             <form>
-                <field name="name"/>
+                <sheet>
+                   <group>
+                         <group>
+                            <field name="name"/>
+                            <label for="nationality" string="Identification card"/>
+                            <div class="o_row">
+                                <field name="nationality"/>
+                                <field name="ci"/>
+                            </div>
+                            <field name="registration_date" invisible="1"/>
+                            <field name="date_of_birth"/>
+                            <field name="algo" widget="Boolean"/> 
+                            <field name="degree"/>
+                            <field name="force"/>
+                            </group>
+                        <group>
+                            <field name="last_name"/>
+                            <field name="sexo"/>
+                            <field name="age"/>
+                        </group>
+                   </group>
+                </sheet>
             </form>
         </field>
     </record>
