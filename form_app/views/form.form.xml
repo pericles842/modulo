@@ -27,13 +27,13 @@
                             <label for="nationality" string="Identification card"/>
                             <div class="o_row">
                                 <field name="nationality"/>
-                                <field name="ci"/>
+                                <field name="ci" />
                             </div>
                             <field name="registration_date" invisible="1"/>
                             <field name="date_of_birth"/>
                             <field name="algo" widget="radio"/> 
-                            <field name="degree"/>
-                            <field name="force"/>
+                            <field name="degree" attrs="{'invisible':[('algo','=','civil')], 'required':[('algo','=','militar')]}"/>
+                            <field name="force" attrs="{'invisible':[('algo','=','civil')], 'required':[('algo','=','militar')]}"/>
                             </group>
                         <group>
                             <field name="last_name"/>
