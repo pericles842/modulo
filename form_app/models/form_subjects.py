@@ -21,3 +21,4 @@ class subjet(models.Model):
     name= fields.Char(string='Name')
     credit_units = fields.Integer(string='Credit Units') 
     career_id = fields.Many2one('form.career', string="Career")
+    form_id = fields.Many2one('form.form', string="Subjects to Study")

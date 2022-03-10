@@ -25,6 +25,7 @@ class form(models.Model):
     date_of_birth = fields.Date(string='Date Of Birth',required=True) #Fecha de nacimiento
     age = fields.Char(string='Age', store=True)
     career_id = fields.Many2one('form.career', string='Career')
+    form_ids=fields.One2many('form.subjet', 'form_id', string='Subjets')
 
     @api.onchange('date_of_birth')
     def verify_age(self):

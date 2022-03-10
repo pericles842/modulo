@@ -42,6 +42,14 @@
                             <field name="career_id"/>                           
                         </group>
                    </group>
+                   <notebook>
+                        <page name="subjet" string="Subjets">
+
+                        </page>
+                        <page name='other' string="other information">
+
+                        </page>
+                   </notebook>
                 </sheet>
             </form>
         </field>
