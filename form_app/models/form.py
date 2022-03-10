@@ -1,5 +1,5 @@
 from datetime import  datetime, date
-from email.policy import default
+import string
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError 
 
@@ -24,6 +24,7 @@ class form(models.Model):
     force = fields.Char(string='Force') #fuerza
     date_of_birth = fields.Date(string='Date Of Birth',required=True) #Fecha de nacimiento
     age = fields.Char(string='Age', store=True)
+    career_id = fields.Many2one('form.career', string='Career')
 
     @api.onchange('date_of_birth')
     def verify_age(self):

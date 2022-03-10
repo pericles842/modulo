@@ -39,6 +39,7 @@
                             <field name="last_name"/>
                             <field name="sexo"/>
                             <field name="age" store="True" />
+                            <field name="career_id"/>                           
                         </group>
                    </group>
                 </sheet>
@@ -58,6 +59,7 @@
     <menuitem id="menu_form_form"
         name="Form" 
         parent ="form_app.menu_form" 
-        action="action_form"/> 
+        action="action_form"
+        sequence="10"/> 
 
 </odoo>

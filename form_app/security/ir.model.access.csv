@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_form_user,FormUser,model_form_form,,1,1,1,0
 access_form_manager,FormManager,model_form_form,,1,1,1,1
+access_form_subjet_user,Form_subjet_User,model_form_subjet,,1,1,1,0
+access_form_subjet_manager,Form_subjet_Manager,model_form_subjet,,1,1,1,1
+access_form_career_user,Form_career_User,model_form_career,,1,1,1,0
+access_form_career_manager,Form_career_Manager,model_form_career,,1,1,1,1

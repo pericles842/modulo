@@ -6,6 +6,9 @@
     'data':[
         'security/ir.model.access.csv',
         'views/form.form.xml',
+        'views/form.career.xml',
+        'views/form.subjets.xml'
+        
     ],
     'application': True,
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="view_form_subjet_tree" model ="ir.ui.view"> 
+        <field name="name">tree</field>
+        <field name="model">form.subjet</field> 
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="section"/>
+                <field name="code"/>
+                <field name="credit_units"/>
+            </tree>
+        </field>
+    </record>
+      <record id="view_form_subjet_form" model ="ir.ui.view"> 
+        <field name="name">form</field>
+        <field name="model">form.subjet</field> 
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="section"/>
+                        <field name="code"/>
+                        <field name="credit_units"/>
+                        <field name="career_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <act_window  
+        id="action_subjet"
+        name="Subjet"
+        res_model = "form.subjet"  
+        view_mode="tree,form" /> 
+ 
+
+    <menuitem id="menu_form_subjet"
+        name="Subjet" 
+        parent ="form_app.menu_form" 
+        action="action_subjet"
+        sequence="30"/> 
+</odoo>
