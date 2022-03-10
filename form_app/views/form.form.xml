@@ -38,7 +38,7 @@
                         <group>
                             <field name="last_name"/>
                             <field name="sexo"/>
-                            <field name="age"/>
+                            <field name="age" store="True" />
                         </group>
                    </group>
                 </sheet>
