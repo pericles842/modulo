@@ -44,7 +44,14 @@
                    </group>
                    <notebook>
                         <page name="subjet" string="Subjets">
-
+                            <field name="form_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="section"/>
+                                    <field name="code"/>
+                                    <field name="credit_units"/>
+                                </tree>
+                            </field>
                         </page>
                         <page name='other' string="other information">
 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="record_math" model="form.subjet">
+        <field name="name">Math-I</field>
+        <field name="section">a</field>
+        <field name="code">09</field>
+        <field name="credit_units">10</field>
+        <field name="career_id" ref="form_app.view_data"/>
+    </record>
+
+    <record id="record_mathII" model="form.subjet">
+        <field name="name">Math-II</field>
+        <field name="section">a</field>
+        <field name="code">08</field>
+        <field name="credit_units">10</field>
+        <field name="career_id" ref="form_app.view_data"/>
+    </record>
+
+     <record id="record_biology" model="form.subjet">
+        <field name="name">Biology</field>
+        <field name="section">b</field>
+        <field name="code">04</field>
+        <field name="credit_units">8</field>
+        <field name="career_id" ref="form_app.view_nursing_data"/>
+    </record>
+
+      <record id="record_basic_nursing" model="form.subjet">
+        <field name="name">Basic Nursing</field>
+        <field name="section">b</field>
+        <field name="code">01</field>
+        <field name="credit_units">4</field>
+        <field name="career_id" ref="form_app.view_nursing_data"/>
+    </record>
+
+      <record id="record_physical" model="form.subjet">
+        <field name="name">Physical</field>
+        <field name="section">b</field>
+        <field name="code">06</field>
+        <field name="credit_units">8</field>
+        <field name="career_id" ref="form_app.view_architecture_data"/>
+    </record>
+
+      <record id="record_anatomy" model="form.subjet">
+        <field name="name">Anatomy</field>
+        <field name="section">b</field>
+        <field name="code">05</field>
+        <field name="credit_units">9</field>
+        <field name="career_id" ref="form_app.view_medicine_data"/>
+    </record>
+
+    <record id="record_pathology" model="form.subjet">
+        <field name="name">Pathology</field>
+        <field name="section">b</field>
+        <field name="code">02</field>
+        <field name="credit_units">6</field>
+        <field name="career_id" ref="form_app.view_medicine_data"/>
+    </record>
+
+    <record id="record_introduction_to_law" model="form.subjet">
+        <field name="name">Introduction to Law</field>
+        <field name="section">c</field>
+        <field name="code">01</field>
+        <field name="credit_units"> 7 </field>
+        <field name="career_id" ref="form_app.view_attorney_data"/>
+    </record>
+
+      <record id="record_elective" model="form.subjet">
+        <field name="name">Elective</field>
+        <field name="section">c</field>
+        <field name="code">04</field>
+        <field name="credit_units">3</field>
+        <field name="career_id" ref="form_app.view_attorney_data"/>
+    </record>
+
+</odoo>

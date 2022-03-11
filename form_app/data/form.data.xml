@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_data" model="form.career">
+        <field name="name">Engineering</field>
+    </record>
+    <record id="view_nursing_data" model="form.career">
+        <field name="name">Nursing</field>
+    </record>
+    <record id="view_architecture_data" model="form.career">
+        <field name="name">Architecture</field>
+    </record>
+    <record id="view_medicine_data" model="form.career">
+        <field name="name">Medicine</field>
+    </record>
+    <record id="view_attorney_data" model="form.career">
+        <field name="name">Attorney</field>
+    </record>
+</odoo>
