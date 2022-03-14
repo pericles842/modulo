@@ -77,18 +77,6 @@
               />
             </group>
           </group>
-          <!--
-          <group name="group_top">
-            <group name="group_col1" string="Group 1"
-                   col="4" colspan="2">
-              <field name="user_id" />
-              <field name="checkout_date" />
-              <field name="state" />
-              <field name="closed_date" />
-            </group>
-            <group name="group_col2" string="Group 2" />
-          </group>
-          -->
 
           <notebook>
             <page name="page_lines" string="Borrowed Books">
@@ -120,8 +108,7 @@
     <field name="arch" type="xml">
         <tree
           decoration-muted="state in ['done', 'cancel']"
-          decoration-bf="state=='open'"
-          >
+          decoration-bf="state=='open'">
             <field name="state" invisible="True" />
             <field name="request_date" />
             <field name="member_id" />

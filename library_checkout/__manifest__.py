@@ -7,8 +7,11 @@
  ],
  'data': [
     'security/ir.model.access.csv',
+    'data/library_checkout_stage.xml',
     'views/library_menu.xml',
     'views/checkout_view.xml',
-    'data/library_checkout_stage.xml',
+    'views/checkout_kanban_view.xml'
+
+    
  ],
 }
