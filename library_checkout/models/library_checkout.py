@@ -1,3 +1,4 @@
+import string
 from odoo import api, exceptions, fields, models
 
 
@@ -5,6 +6,28 @@ class Checkout(models.Model):
     _name = 'library.checkout'
     _description = 'Checkout Request'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+
+    @api.depends('line_ids')
+    def _compute_num_books(self):
+        for book in self:
+            book.num_books = len(book.line_ids)
+    
+    @api.model
+    def _default_stage(self):
+        Stage = self.env['library.checkout.stage']
+        return Stage.search([], limit=1)
+    
+
+
+    member_image = fields.Binary(related='member_id.partner_id.image_1920')
+    num_other_checkouts = fields.Integer(string='ola')
+
+    def _compute_num_other_checkouts(self):
+        domain = [
+            ('member_id', '=', self.member_id.id),
+            ('state', 'in', ['open']),
+            ('id', '!=', self.id)]
+        return self.search_count(domain)
 
     color = fields.Integer('Color Index')
     priority = fields.Selection(
@@ -19,23 +42,6 @@ class Checkout(models.Model):
     ('done', 'Ready for next stage')],
     'Kanban State',
     default='normal')
-
-    def name_get(self):
-        names = []
-        for rec in self:
-            name = '%s/%s' % (rec.member_id, rec.request_date)
-            names.append((rec.id, name))
-        return names
-
-    @api.model
-    def _default_stage(self):
-        Stage = self.env['library.checkout.stage']
-        return Stage.search([], limit=1)
-
-    @api.model
-    def _group_expand_stage_id(self, stages, domain, order):
-        return stages.search([], order=order)
-
     member_id = fields.Many2one(
         'library.member',
         required=True,
@@ -47,6 +53,7 @@ class Checkout(models.Model):
     )
     request_date = fields.Date(
         default=lambda s: fields.Date.today())
+
     line_ids = fields.One2many(
         'library.checkout.line',
         'checkout_id',
@@ -57,10 +64,24 @@ class Checkout(models.Model):
         group_expand='_group_expand_stage_id',
     )
     state = fields.Selection(related='stage_id.state')
-
+    num_books = fields.Integer(
+        compute='_compute_num_books',
+        store=True)
     checkout_date = fields.Date()
     closed_date = fields.Date()
 
+    def name_get(self):
+        names = []
+        for rec in self:
+            name = '%s/%s' % (rec.member_id, rec.request_date)
+            names.append((rec.id, name))
+        return names
+
+
+    @api.model
+    def _group_expand_stage_id(self, stages, domain, order):
+        return stages.search([], order=order)
+    
     @api.onchange('member_id')
     def onchange_member_id(self):
         today = fields.Date.today()
@@ -97,25 +118,12 @@ class Checkout(models.Model):
             if new_state == 'open' and self.state != 'open':
                 vals['checkout_date'] = fields.Date.today()
             if new_state == 'done' and self.state != 'done':
-                vals['close_date'] = fields.Date.today()
+                vals['closed_date'] = fields.Date.today()
         super().write(vals)
         # Code after write: can use `self`, with the updated values
         return True
 
-    member_image = fields.Binary(related='user_id.image_1920')
-    num_other_checkouts = fields.Integer(
-        compute='_compute_num_other_checkouts')
 
-    def _compute_num_other_checkouts(self):
-        domain = [
-            ('member_id', '=', self.member_id.id),
-            ('state', 'in', ['open']),
-            ('id', '!=', self.id)]
-        return self.search_count(domain)
-
-    num_books = fields.Integer(
-        compute='_compute_num_books',
-        store=True)
 
     @api.depends('line_ids')
     def _compute_num_books(self):
