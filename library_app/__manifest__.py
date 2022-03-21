@@ -19,5 +19,4 @@
     'data/book_demo.xml',
 ],
 'application': True, #valor boleano que define si instalara o no 
-} 
- #aqui vinculamos xml para la interfaz (views)
+}

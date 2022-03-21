@@ -2,13 +2,12 @@
 <odoo>
 
     <record id="record_math" model="form.subjet">
-        <field name="name">Math-I</field>
-        <field name="section">a</field>
-        <field name="code">09</field>
+      <field name="name">Math-I</field>
+      <field name="section">a</field>
+        <field name="code">09</field> 
         <field name="credit_units">10</field>
         <field name="career_id" ref="form_app.view_data"/>
-    </record>
-
+    </record> 
     <record id="record_mathII" model="form.subjet">
         <field name="name">Math-II</field>
         <field name="section">a</field>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_form_search" model ="ir.ui.view"> 
+        <field name="name">search</field>
+        <field name="model">form.form</field> 
+        <field name="arch" type="xml">
+            <search>
+                <field name="ci" string="C.I" groups="base.group_user"/>
+                <field name="name" groups="base.group_user"/>
+                <filter string="+18" name="old" domain="[('age','>=','18')]"/>
+                <filter string="Civil" name="cvil" domain="[('algo','=','civil')]"/>
+                <filter string="Militar" name="militar" domain="[('algo','=','militar')]"/>
+                <group string="Sexo" >
+                    <filter string="Sexo" name="group_by_sexo" domain="[]" context="{'group_by':'sexo'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

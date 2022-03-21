@@ -12,5 +12,5 @@
         'views/form.subjets.xml'
         
     ],
-    'application': True,
+    'application': True, 
 }

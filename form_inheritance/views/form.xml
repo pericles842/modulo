@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="form_views_tree" model="ir.ui.view">
+        <field name="name">Tree</field>
+        <field name="model">form.form</field>
+        <field name="inherit_id" ref="form_app.view_form_tree"></field>
+        <field name="arch" type="xml">
+            <field name="registration_date" position="after">
+                <field name="tlf"/>
+            </field>
+        </field>
+    </record>
+    
+    <record id="form_views_form" model="ir.ui.view">
+        <field name="name">Form</field>
+        <field name="model">form.form</field>
+        <field name="inherit_id" ref="form_app.view_form_form"></field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other']" position="inside">
+                <group>
+                    <field name="tlf"/>
+                    <field name="gmail"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
