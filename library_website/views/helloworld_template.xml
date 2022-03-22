@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-    <template id="helloworld" name="Hello World" Template>
+    <template id="helloworld" name="Hello World" >
         <t t-call="website.layout">
             <h1>Hello World!</h1>
         </t>

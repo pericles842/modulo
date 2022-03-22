@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_form_user,FormUser,model_form_form,,1,1,1,0
 access_form_manager,FormManager,model_form_form,,1,1,1,1
+access_teachers_manager,FormManager,model_form_teachers,base.group_user,1,1,1,1

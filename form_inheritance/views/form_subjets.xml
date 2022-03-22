@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="views_form_subjets_form" model="ir.ui.view">
+        <field name="name">Form</field>
+        <field name="model">form.subjet</field>
+        <field name="inherit_id" ref="form_app.view_form_subjet_form"></field>
+        <field name="arch" type="xml">
+            <field name="career_id" position="after">
+                <field name="teachers_ids" groups="base.group_user" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -7,4 +7,4 @@ class form(models.Model):
 
     tlf = fields.Integer(string='Phone')
     gmail = fields.Char(string='Gmail')
-
+    form_list_ids=fields.One2many('form.subjet.list', 'form_subjet_id', string="Name")

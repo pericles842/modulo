@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_teachers_tree" model="ir.ui.view">
+        <field name="name">tree</field>
+        <field name="model">form.teachers</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_form_teachers_form" model="ir.ui.view">
+        <field name="name">form</field>
+        <field name="model">form.teachers</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <act_window  
+        id="action_teachers"
+        name="Teachers"
+        res_model = "form.teachers"  
+        view_mode="tree,form" />
+        
+    <menuitem id="menu_form_teachers"
+        name="Teachers" 
+        parent ="form_app.menu_form" 
+        action="action_teachers"
+        sequence="40"/>
+</odoo>

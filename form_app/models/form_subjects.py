@@ -1,4 +1,4 @@
-import string
+
 from odoo import api, fields, models
 
 class career(models.Model):
