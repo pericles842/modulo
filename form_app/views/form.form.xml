@@ -39,7 +39,7 @@
                             <field name="last_name"/>
                             <field name="sexo"/>
                             <field name="age" store="True" />
-                            <field name="career_id"/>                           
+                            <field name="career_id"/>
                         </group>
                    </group>
                    <notebook>

@@ -8,7 +8,8 @@
         'views/form_search.xml',
         'views/form.xml',
         'views/form_teachers.xml',
-        'views/form_subjets.xml'
+        'views/form_subjets.xml',
+        'report/form_form_report.xml',
     ],
     'application': False,
 }

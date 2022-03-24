@@ -1,4 +1,3 @@
-import string
 from odoo import api, fields, models
 
 class subjet(models.Model):
@@ -21,4 +20,10 @@ class formSubjetList(models.Model):
 
     name_id=fields.Many2one('form.subjet', string='Name' )
     form_subjet_id=fields.Many2one('form.form', string="Name") 
- 
+    subjet_form_id=fields.Many2one('form.form', string="Subjets")
+
+    @api.onchange('name_id')
+    def view_name(self):
+        self.code = self.name_id.code
+        self.credit_units = self.name_id.credit_units
+        self.section = self.name_id.section
