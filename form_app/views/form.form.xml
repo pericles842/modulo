@@ -29,7 +29,7 @@
                                 <field name="nationality"/>
                                 <field name="ci" />
                             </div>
-                            <field name="registration_date" invisible="1"/>
+                            <field name="registration_date" /> <!-- invisible="1" -->
                             <field name="date_of_birth"/>
                             <field name="algo" widget="radio"/> 
                             <field name="degree" attrs="{'invisible':[('algo','=','civil')], 'required':[('algo','=','militar')]}"/>

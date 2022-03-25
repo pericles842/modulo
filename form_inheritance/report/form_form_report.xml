@@ -28,7 +28,7 @@
             <t t-foreach="docs" t-as="o">
                 <span class="row" > 
                     <span>
-                       <table style="font-size:25px;">
+                       <table style="font-size:30px; color:#4E4A4A; margin-left:30px;">
                            <tr> 
                               <td  style="padding-right: 30px;">
                                   <b>Name</b> 
@@ -69,10 +69,32 @@
                                   </td>
                               </div>
                           </tr>
+                          <t t-if="o.algo == 'militar'">
+                          <tr> 
+                            <td style="padding-right: 30px;">
+                                <b>Degree</b>
+                            </td>
+                            <div >
+                                <td style="border-left:1px solid; padding-left: 15px;">
+                                    <span t-field="o.degree"/>
+                                </td>
+                            </div>
+                        </tr>
+                        <tr> 
+                            <td style="padding-right: 30px;">
+                                <b>Force</b>
+                            </td>
+                            <div >
+                                <td style="border-left:1px solid; padding-left: 15px;">
+                                    <span t-field="o.force"/>
+                                </td>
+                            </div>
+                        </tr>
+                    </t>
                       </table>
                       </span>
                     <span style="margin-left: 500px;" >
-                       <table style="font-size:25px;" >
+                       <table style="font-size:30px; color:#4E4A4A;" >
                            <tr>
                                <td style="padding-right: 30px;">
                                    <b>Last Name</b>
@@ -118,35 +140,66 @@
                 </span>
                 <br/>
                 <br/>
-               <h3> Subjet </h3>
+                <br/>
+               <h1 style="font-size:60px; color:#2D2A2A;" > Subjet </h1>
+               <br/>
                <span>
-                   <table>  
-                       <tr>
-                           <td>
+                   <table style="font-size:30px; color:#4E4A4A;" >  
+                       <tr style="background-color:#B8B8B8; color:#2D2A2A;" >
+                           <td style="padding-right: 300px;">
                                <b>Name</b>
+                            </td>
+                            <td style="padding-right: 300px;" >
+                                <b>Section</b>
+                            </td>
+                            <td style="padding-right: 200px;" >
+                                <b>Code</b>
+                            </td>
+                            <td style="padding-right: 100px;" >
+                                <b>Credit Units</b>
+                            </td>
+                        </tr>
+                        <t t-foreach="o.subjet_form_ids" t-as="i">
+                       <tr >       
+                           <td>
+                               
+                               <span t-field="i.name_id"/>
+                            </td>
+                           <td>
+                                <span t-field="i.section"/>
                            </td>
                            <td>
-                               <b>Section</b>
+                                <span t-field="i.code"/>
                            </td>
                            <td>
-                               <b>Code</b>
-                           </td>
-                           <td>
-                               <b>Credit Units</b>
+                                <span t-field="i.credit_units"/>    
                            </td>
                        </tr>
-                       <tr>       
-                           <td>
-                                <span t-field="o.subjet_form_ids.name"/>
+                     </t>
+                   </table>
+                </span>
+            
+               <br/>
+                <br/>
+                <br/>
+               <h1 style="font-size:60px; color:#2D2A2A;"> Other Information </h1>
+               <br/>
+               <span>
+                   <table style="font-size:30px; color:#4E4A4A;" >  
+                       <tr style="background-color:#B8B8B8; color:#2D2A2A;" >
+                           <td >
+                               <b>Phone</b>
                            </td>
-                           <td>
-                                <span t-field="o.subjet_form_ids.section"/>
+                           <td >
+                               <b>Gmail</b>
                            </td>
-                           <td>
-                                <span t-field="o.subjet_form_ids.code"/>
+                       </tr>
+                       <tr >       
+                           <td style="padding-right: 840px;">
+                                <span t-field="o.tlf"/>
                            </td>
-                           <td>
-                                <span t-field="o.subjet_form_ids.credit_units"/>    
+                           <td >
+                                <span t-field="o.gmail"/>
                            </td>
                        </tr>
                    </table>
