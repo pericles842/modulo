@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  
+  <data>
+    <record id="view_form_wizard" model="ir.ui.view">
+      <field name="name">wizard</field>
+      <field name="model">form.wizard</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="current_date"/>
+              <field name="final_date"/>
+            </group>
+          </sheet>
+       <footer>
+          <button class="btn-primary" string="imprimir"  name="event_wizard" type="object"/>
+          <button class="btn-primary" string="Cancelar" special="cancel"/>
+        </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+
+  <record id="action_wizard" model="ir.actions.server">
+    <field name="name">Incripcion</field>
+    <field name="model_id" ref="form_inheritance.model_form_form"/>
+    <field name="binding_model_id" ref="form_inheritance.model_form_form"/>
+    <field name="binding_view_types">form</field>
+ </record>
+</odoo>

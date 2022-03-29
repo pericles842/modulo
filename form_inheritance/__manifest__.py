@@ -10,8 +10,7 @@
         'views/form_teachers.xml',
         'views/form_subjets.xml',
         'report/form_form_report.xml',
-        'wizard/view_form.fom.xml'
-        
+        'wizard/view_form_fom.xml'
     ],
     'css': ['static/src/css/my_style.css'],
     'application': False,

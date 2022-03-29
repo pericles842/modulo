@@ -3,3 +3,4 @@ access_form_user,FormUser,model_form_form,base.group_user,1,1,1,0
 access_form_manager,FormManager,model_form_form,base.group_user,1,1,1,1
 access_teachers_manager,FormManager,model_form_teachers,base.group_user,1,1,1,1
 access_subjet_manager,SubjetManager,model_form_subjet_list,base.group_user,1,1,1,1
+access_wizard_manager,WizardManager,model_form_wizard,base.group_user,1,1,1,1

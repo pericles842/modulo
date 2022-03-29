@@ -11,3 +11,7 @@ class form(models.Model):
     subjet_form_ids=fields.One2many('form.subjet.list', 'subjet_form_id', string="Subjets")
     current_date=fields.Date(string="Current Date")
     final_date=fields.Date(string="Final Date")
+    
+    @api.model
+    def event_wizard(self):
+        print('que paso zs')
