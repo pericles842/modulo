@@ -6,8 +6,8 @@ class form(models.TransietModel ):
     _inherit = 'form.form'
 
     current_date=fields.Date(string="Current Date")
-    final_date=fields.Date(string="Final Date") 
-    
-    
+    final_date=fields.Date(string="Final Date")
+
+
     def button_send(self):
         return self.current_date
