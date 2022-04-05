@@ -11,7 +11,7 @@ class form(models.Model):
     
     name = fields.Char(string='Name', required=True) #campo
     last_name = fields.Char(string='Last Name')
-    registration_date= fields.Datetime(string='Registration Date',default=fields.Date.today() )
+    registration_date= fields.Date(string='Registration Date',default=fields.Date.today() )
     ci = fields.Integer(string='C.I', required=True)
     nationality = fields.Selection([('v','V'),
                                     ('e','E')],default="v", string='nationality', readonly='1')

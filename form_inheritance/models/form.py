@@ -19,7 +19,7 @@ class form(models.Model):
         "view":"view_form_wizard",
         "action_id":"view_form_wizard",
         "view_mode":"form",
-        "contex":"self.ids",
+        "context":{'form_wizard_ids': self.id},
         "target":"new"
         }
         return act_window_server
