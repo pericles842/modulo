@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="views_account_histories_tree" model="ir.ui.view">
+        <field name="name">Tree</field>
+        <field name="model">account.histories</field>
+        <field name="arch" type="xml">
+           <tree>
+               <field name="num"/>
+               <field name="name"/>
+               <field name="date"/>
+               <field name="total"/>
+           </tree>
+        </field>
+    </record>
+
+    <act_window  
+        id="action_histories"
+        name="Histories"
+        res_model = "account.histories"
+        view_mode="tree" />
+
+    <menuitem id="menu_tree_account"
+        name="Histories" 
+        parent ="account.account_management_menu" 
+        action="action_histories"
+        groups="account.group_account_manager" 
+        sequence="5"/>
+</odoo>
