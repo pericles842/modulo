@@ -1,6 +1,7 @@
+from email.policy import default
 from odoo import api, fields, models 
 
-class histories (models.Model):
+class Histories (models.Model):
     _name='account.histories'
     _description='Extencion del historial'
     _author='louis'
@@ -8,16 +9,24 @@ class histories (models.Model):
 
     name_id = fields.Many2one('account.move', string='Name')
     date = fields.Date(string="Date")
-    total = fields.Integer(string="Total")
-    num = fields.Integer(string="N°", compute= lambda x : ++1)
+    total = fields.Float(string="Total")
+    num= fields.Char('N°', readonly=True, default='New')
     name = fields.Many2one('res.users', string='Name User', default=lambda self: self.env.user)
 
+
+    @api.model
+    def create(self, vals):
+        if vals.get('num', 'New') == 'New':
+            vals['num'] = self.env['ir.sequence'].next_by_code('account.increment')
+        result = super(Histories, self).create(vals)
+        return result
 
 
 class AccountMove(models.Model):
     _inherit = "account.move"
 
     name_ids = fields.One2many('account.histories','name_id' )
+
 
     def assign(self,rec):
         dic = {
