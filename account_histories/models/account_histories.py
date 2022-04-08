@@ -1,4 +1,3 @@
-from email.policy import default
 from odoo import api, fields, models 
 
 class Histories (models.Model):
