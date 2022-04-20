@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
+    
+<!--si no se usa no se coloca-->
+<!--
     <record id="report_form_paperformat"
         model="report.paperformat">
   <field name="name">European A4 Landscape</field>
@@ -16,15 +19,18 @@
   <field name="header_spacing">35</field>
   <field name="dpi">90</field>
 </record>
+-->
 
     <report id="report_stock_template"
             string="Product characteristics"
             model="product.template"
             report_type="qweb-pdf"
-            menu="True"
+            menu="True"  <!--por defecto el reporte es visible-->
             name="inventory_update.product_template"/>
 
-   <template id="product_template" name="stock">
+
+    <!--redundancia de style    -->
+   <template id="product_template" name="stock">  <!--el nombre debe ser nemotecnico-->
        <t t-call="web.html_container">
            <t t-call="web.external_layout">
                <t t-foreach="docs" t-as="o">
