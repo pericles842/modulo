@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    
     <record id="views_account_histories_tree" model="ir.ui.view">
         <field name="name">Tree</field>
         <field name="model">account.histories</field>
         <field name="arch" type="xml">
            <tree>
-               <field name="num"/>
+               <field name="id" string="Numero"/>
                <field name="name"/>
                <field name="date"/>
                <field name="total"/>
            </tree>
         </field>
     </record>
-    <record id="seq_account_num" model="ir.sequence">
-        <field name="name">num Sequence</field>
-        <field name="code">account.increment</field>
-        <field name="active">TRUE</field>
-        <field name="padding">5</field>
-        <field name="number_next">1</field>
-        <field name="number_increment">1</field>
-    </record>
+    
     <act_window  
         id="action_histories"
         name="Histories"

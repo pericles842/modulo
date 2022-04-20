@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="report_form_paperformat"
+        model="report.paperformat">
+  <field name="name">European A4 Landscape</field>
+  <field name="default" eval="True" />
+  <field name="format">A4</field>
+  <field name="page_height">0</field>
+  <field name="page_width">0</field>
+  <field name="orientation">Portrait</field>
+  <field name="margin_top">40</field>
+  <field name="margin_bottom">23</field>
+  <field name="margin_left">7</field>
+  <field name="margin_right">7</field>
+  <field name="header_line" eval="False" />
+  <field name="header_spacing">35</field>
+  <field name="dpi">90</field>
+</record>
+
+    <report id="report_stock_template"
+            string="Product characteristics"
+            model="product.template"
+            report_type="qweb-pdf"
+            menu="True"
+            name="inventory_update.product_template"/>
+
+   <template id="product_template" name="stock">
+       <t t-call="web.html_container">
+           <t t-call="web.external_layout">
+               <t t-foreach="docs" t-as="o">
+                   <div >
+                        <div align="center">
+                            <div style="height:250px; width:250px; padding:30px;" >
+                                <span t-field="o.image_1920" 
+                                t-options="{'widget': 'image'}"/> 
+                            </div>
+                            <div style="font-size:60px">
+                                <p style="margin:30px;" t-field="o.name"/>
+                           </div>
+                           <b style="font-size:30px; margin:60px;">General information</b>
+                        </div>
+                        <div style="font-size:20px; " class="row">
+                            <div style="padding-right:30px; border-right:1px solid gray;">
+                                <b style="  color:#252222;" >Kind of product</b>
+                                    <br/>
+                                <b style="  color:#252222;">Product category</b>
+                                    <br/>
+                                <b style="  color:#252222;">Internal reference</b>
+                                    <br/>
+                                <b style="color:#252222;">Barcode</b>
+                            </div>
+                            <div style=" padding-right :300px; padding-left:10px;" >
+                                <p style="margin:0px;" t-field="o.type"/>
+                                <p style="margin:0px;" t-field="o.categ_id"/> 
+                                <p style="margin:0px;" t-field="o.default_code"/>
+                                <p style="margin:0px;" t-field="o.barcode"/>
+                            </div>
+                            <div style="padding-right:30px; border-right:1px solid gray;" >
+                                <b style="  color:#252222;">Sale price</b>
+                                    <br/>
+                                <b style="  color:#252222;">Cost</b>
+                                    <br/>
+                                <b style="  color:#252222;">Company</b>
+                            </div>
+                            <div style="padding-left:10px;">
+                                <p style="margin:0px;" t-field="o.list_price"
+                                t-options="{'widget': 'monetary'}"/>
+                                <p style="margin:0px;" t-field="o.standard_price" 
+                                t-options="{'widget': 'monetary'}"/>
+                                <p style="margin:0px;" t-field="o.company_id"/>
+                            </div>
+                        </div>
+                   </div>
+               </t>
+           </t>
+       </t>
+   </template>
+</odoo>

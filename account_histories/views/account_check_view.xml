@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="views_account_check" model="ir.ui.view">
+        <field name="name">inherit_acount_move </field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"></field>
+        <field name="arch" type="xml">
+                <xpath expr="//div[@name='journal_div']" position="before">
+                        <field name="button"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="num_sequence" readonly ='1' attrs="{'invisible':[('button','=',False)]}" />
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{ 'readonly':[('button','=',False)], 'invisible':[('button','=',True)]}</attribute>
+                </xpath>
+        </field>
+    </record>
+    <record id="num_sequence" model="ir.sequence">
+        <field name="name">num_sequence</field>
+        <field name="code">ir.sequence</field>
+        <field name="prefix">Credi</field>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+    </record>
+</odoo> 
