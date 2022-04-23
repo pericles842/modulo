@@ -18,10 +18,9 @@
 </record>
 
     <report id="report_stock_template"
-            string="Product characteristics"
+            string="Product characteristics (PDF )"
             model="product.template"
             report_type="qweb-pdf"
-            menu="True"
             name="inventory_update.product_template"/>
 
    <template id="product_template" name="stock">
@@ -41,7 +40,7 @@
                         </div>
                         <div style="font-size:20px; " class="row">
                             <div style="padding-right:30px; border-right:1px solid gray;">
-                                <b style="  color:#252222;" >Kind of product</b>
+                                <b style="  " >Kind of product</b>
                                     <br/>
                                 <b style="  color:#252222;">Product category</b>
                                     <br/>
