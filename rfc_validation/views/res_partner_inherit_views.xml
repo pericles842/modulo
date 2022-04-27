@@ -9,17 +9,28 @@
             <xpath expr="//field[@name='company_type']" position="after">
                     <group>
                         <field  name="nationality"
-                        attrs="{'invisible':[('company_type','=', 'person' )]}"
                         widget="radio" 
-                        options="{'horizontal': true}" 
+                        options="{'horizontal': true}"
                         />
                     </group>
             </xpath>
             <xpath expr="//field[@name='vat']" position="before">
-                <field name="rfc"/>
+                <field name="rfc" attrs="{'required':[('nationality','=', 'n' )]}"/>
+                <field name="fiscal_id" attrs="{'invisible':[('nationality','=','n')]}" />
             </xpath>
             <xpath expr="//field[@name='vat']" position="attributes">
                 <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!-- res.partner inherit tree view -->
+    <record id="action_contacts_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="rfc"/>
             </xpath>
         </field>
     </record>
