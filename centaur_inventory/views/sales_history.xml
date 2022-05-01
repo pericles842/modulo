@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- centaur.inventory tree view -->
+    <record id="sale_history_view_tree" model="ir.ui.view">
+        <field name="name">centaur_sale_view_tree</field>
+        <field name="model">centaur.inventory</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <act_window  
+    id="action_sale_history"
+    name="Historial de ventas"
+    res_model = "centaur.inventory"  
+    view_mode="tree" /> 
+
+    <menuitem id="menu_tree_sale"
+    name="Historial de ventas" 
+    parent ="centaur_inventory.centaur_menu" 
+    action="action_sale_history"
+    sequence="20"/>
+</odoo>

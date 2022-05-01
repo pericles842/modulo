@@ -1,5 +1,4 @@
 from odoo import  api, models,fields
-from sys import getsizeof
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -13,7 +12,13 @@ class ResParther(models.Model):
     fiscal_id = fields.Char(string='Fiscal ID')
 
 
-
+    @api.onchange('rfc')
+    def _onchange_rfc(self):
+        if self.rfc :
+            records = self.env['res.partner'].search([['rfc', '=', self.rfc]])
+            for i in records:
+                if i.id != self.id:
+                    raise ValidationError('rfc ya existe')
 
     @api.onchange('rfc')
     def _onchange_nationality(self):
@@ -28,12 +33,6 @@ class ResParther(models.Model):
             self.rfc = str(self.rfc.upper())
             if len(self.rfc) != 13:
                 raise ValidationError('El numero de caracteres debe ser 13')
-            elif self.rfc:
-                records = self.env['res.partner'].search([['rfc','=',self.rfc]])
-                if records:
-                    for c in records:
-                        print('PRIMERA bandera')
-                        print(c)
         elif self.nationality == 'n' and self.company_type == 'company':
             self.rfc = str(self.rfc.upper())
             if len(self.rfc) != 12:
