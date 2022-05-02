@@ -25,10 +25,7 @@
             string="Product characteristics (PDF )"
             model="product.template"
             report_type="qweb-pdf"
-<<<<<<< HEAD
-=======
-            menu="True"  <!--por defecto el reporte es visible-->
->>>>>>> a5b4f864805571e91c907aa4a3e62424f9d7890c
+            menu="True" 
             name="inventory_update.product_template"/>
 
 
