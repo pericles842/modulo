@@ -7,7 +7,8 @@
         'security/ir.model.access.csv',
         'views/centaur_inventory.xml',
         'views/sequence_centaur.xml',
-        'views/sales_history.xml'
+        'views/sales_history.xml',
+        'views/search_centaur_inventory.xml'
     ],
     'application': True, 
 }

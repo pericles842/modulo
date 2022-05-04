@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- centaur.inventory search view -->
+    <record id="view_search_centaur" model="ir.ui.view">
+        <field name="name">centaur.inventory.view.search</field>
+        <field name="model">centaur.inventory</field>
+        <field name="arch" type="xml">
+            <search >
+                <field name="product_date" string="Fecha de inclucion" groups="base.group_user"/>
+                <filter name="state" string="Vendido" domain="[('state','=','sale')]"/>
+                <filter name="state" string="No vendido" domain="[('state','=','unsold')]"/>
+                <group string="Sexo" >
+                    <filter string="Talla" name="groups" domain="[]" context="{'group_by':'groups'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="centaur_inventory_default_search" model="ir.actions.act_window">
+        <field name="res_model">centaur.inventory</field>
+        <field name="context">{'search_default_groups':1}</field>
+    </record>
+</odoo>

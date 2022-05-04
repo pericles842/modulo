@@ -27,22 +27,34 @@ class CentaurInventory(models.Model):
                                 readonly="1")
     state = fields.Selection(string='Estado',
                              selection=[
-                            ('unsold', 'Unsold'),
-                            ('sale', 'Sale')])
+                            ('unsold', 'No vendido'),
+                            ('sale', 'Vendido')],
+                            default='unsold')
     
     description = fields.Char(string='Descripcion')
     sale = fields.Boolean(string='Vendido',
-                        default=False)
+                        default = False)
     total = fields.Integer(string='Precio')
+    note = fields.Text(string='Nota')
+    
 
 
 
     @api.onchange('sale')
     def _sale_date(self):
         if self.sale == True:
-            self.state == 'sale'
-        else:
-            self.state == 'unsold'
+            print('bandera1')
+            print('bandera1')
+            print('bandera1')
+            print('bandera1')
+            print('bandera1')
+            self.state = 'sale'
+        elif self.sale == False:
+            print('bandera2')
+            print('bandera2')
+            print('bandera2')
+            print('bandera2')
+            self.state = 'unsold'
 
 
     @api.model

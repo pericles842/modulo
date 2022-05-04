@@ -21,10 +21,18 @@
                         </group>
                         <group>
                             <field name="size"/>
-                            <field name="total"/>
-                            <field name="sale"/>
+                            <field name="total" widget="monetary"/>
+                            <field name="sale" />
+                            <field name="state" invisible="True"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Informacion" >
+                            <group>
+                                <field name="note"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -41,8 +49,8 @@
                 <field name="groups"/>
                 <field name="product_date"/>
                 <field name="size"/>
-                <field name="total"/>
-                <field name="state"/>
+                <field name="total" widget="monetary"/>
+                <field name="state" />
             </tree>
         </field>
     </record>
