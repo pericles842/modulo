@@ -43,17 +43,8 @@ class CentaurInventory(models.Model):
     @api.onchange('sale')
     def _sale_date(self):
         if self.sale == True:
-            print('bandera1')
-            print('bandera1')
-            print('bandera1')
-            print('bandera1')
-            print('bandera1')
             self.state = 'sale'
         elif self.sale == False:
-            print('bandera2')
-            print('bandera2')
-            print('bandera2')
-            print('bandera2')
             self.state = 'unsold'
 
 
