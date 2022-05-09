@@ -15,8 +15,4 @@
             </search>
         </field>
     </record>
-    <record id="centaur_inventory_default_search" model="ir.actions.act_window">
-        <field name="res_model">centaur.inventory</field>
-        <field name="context">{'search_default_groups':1}</field>
-    </record>
 </odoo>

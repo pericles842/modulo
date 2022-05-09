@@ -1,3 +1,4 @@
+from sre_constants import GROUPREF
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from random import randint
@@ -14,6 +15,8 @@ class CentaurInventory(models.Model):
                               ('f', 'Franelas'),
                               ('s', 'Short'),
                               ('p', 'Pantalones')])
+    groups_id = fields.Many2one('centaur.groups', 'Grupos')
+    
     size = fields.Selection(string='Talla',
                             selection=[
                                 ('s', 'S'),

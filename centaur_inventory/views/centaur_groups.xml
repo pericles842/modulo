@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- centaur.groups form view -->
+    <record id="centaur_groups_view_form" model="ir.ui.view">
+        <field name="name">centaur_groups_view_form</field>
+        <field name="model">centaur.groups</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>
+                    <group>
+                        <field name="grup"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- centaur.groups tree view -->
+    <record id="centaur_groups_view_tree" model="ir.ui.view">
+        <field name="name">centaur_groups_view_tree</field>
+        <field name="model">centaur.groups</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="grup"/>
+            </tree>
+        </field>
+    </record>
+    <act_window  
+    id="action_centaur_groups"
+    name="Grupos"
+    res_model = "centaur.groups"  
+    view_mode="tree,form" /> 
+
+    <menuitem id="menu_tree_groups"
+    name="Grupos" 
+    parent ="centaur_inventory.centaur_menu" 
+    action="action_centaur_groups"
+    sequence="30"/>
+</odoo>

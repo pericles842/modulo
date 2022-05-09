@@ -18,6 +18,7 @@
                             <field name="serial" placeholder="Serial"/>
                             <field name="groups"/>
                             <field name="product_date"/>
+                            <field name="groups_id"/>
                         </group>
                         <group>
                             <field name="size"/>
@@ -47,6 +48,7 @@
                 <field name="name"/>
                 <field name="serial"/>
                 <field name="groups"/>
+                <field name="groups_id"/>
                 <field name="product_date"/>
                 <field name="size"/>
                 <field name="total" widget="monetary"/>
