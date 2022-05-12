@@ -10,7 +10,7 @@
                 <filter name="state" string="Vendido" domain="[('state','=','sale')]"/>
                 <filter name="state" string="No vendido" domain="[('state','=','unsold')]"/>
                 <group string="Sexo" >
-                    <filter string="Talla" name="groups" domain="[]" context="{'group_by':'groups'}"/>
+                    <filter string="Grupos" name="groups" domain="[]" context="{'group_by':'groups'}"/>
                 </group>
             </search>
         </field>

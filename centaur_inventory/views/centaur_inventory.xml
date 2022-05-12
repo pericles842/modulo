@@ -24,6 +24,7 @@
                             <field name="size"/>
                             <field name="total" widget="monetary"/>
                             <field name="sale" />
+                            <field name="date_sale" attrs="{'invisible':[('sale','=','false')]}"/>
                             <field name="state" invisible="True"/>
                         </group>
                     </group>

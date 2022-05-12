@@ -1,4 +1,5 @@
 from sre_constants import GROUPREF
+import string
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from random import randint
@@ -39,7 +40,7 @@ class CentaurInventory(models.Model):
                         default = False)
     total = fields.Integer(string='Precio')
     note = fields.Text(string='Nota')
-    
+    date_sale = fields.Char(string='Fecha de venta', readonly='1')
 
 
 
@@ -47,6 +48,7 @@ class CentaurInventory(models.Model):
     def _sale_date(self):
         if self.sale == True:
             self.state = 'sale'
+            self.date_sale = date.today()
         elif self.sale == False:
             self.state = 'unsold'
 
