@@ -40,7 +40,7 @@ class CentaurInventory(models.Model):
                         default = False)
     total = fields.Integer(string='Precio')
     note = fields.Text(string='Nota')
-    date_sale = fields.Char(string='Fecha de venta', readonly='1')
+    date_sale = fields.Date(string='Fecha de venta', readonly='1')
 
 
 

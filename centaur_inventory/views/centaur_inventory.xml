@@ -24,7 +24,7 @@
                             <field name="size"/>
                             <field name="total" widget="monetary"/>
                             <field name="sale" />
-                            <field name="date_sale" attrs="{'invisible':[('sale','=','false')]}"/>
+                            <field name="date_sale" attrs="{'invisible':[('sale','=', False)]}"/>
                             <field name="state" invisible="True"/>
                         </group>
                     </group>
@@ -49,11 +49,11 @@
                 <field name="name"/>
                 <field name="serial"/>
                 <field name="groups"/>
-                <field name="groups_id"/>
-                <field name="product_date"/>
                 <field name="size"/>
+                <field name="product_date"/>
                 <field name="total" widget="monetary"/>
                 <field name="state" />
+                <field name="date_sale"/>
             </tree>
         </field>
     </record>
